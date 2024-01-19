@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Grape+Nuts&display=swap');
+
 .navigation {
   display: flex;
   justify-content: space-between;
@@ -10,7 +12,7 @@
   text-decoration: none;
   color: #f5f5dc;
   font-size: 1.5em;
-  font-family: 'Grape Nuts';
+  font-family: 'Grape Nuts', sans-serif;
   text-transform: uppercase;
   letter-spacing: 2px;
 }
@@ -36,15 +38,15 @@
 .navigation_item a:hover {
   color: #e1b382;
   font-size: 1.4rem;
-  text-decoration: underline;
 }
+
 .navigation_toggle {
   display: none;
   background: none;
   border: none;
   cursor: pointer;
   font-size: 1.5em;
-  color: #ffffff;
+  color: #fff;
 }
 
 .fa-bars,
