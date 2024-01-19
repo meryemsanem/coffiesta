@@ -19,6 +19,9 @@ const Navigation = () => {
         className={isMobile ? 'navigation_list show' : 'navigation_list hide'}
       >
         <li className="navigation_item">
+          <Link to="/home">Home</Link>
+        </li>
+        <li className="navigation_item">
           <Link to="/coffees">Coffees</Link>
         </li>
         <li className="navigation_item">
