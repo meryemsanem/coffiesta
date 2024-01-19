@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Grape+Nuts&display=swap');
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #94290c;
+  padding: 15px;
+}
+
+.navigation_logo a {
+  text-decoration: none;
+  color: #f5f5dc;
+  font-size: 1.5em;
+  font-family: 'Grape Nuts', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.navigation_list {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+  padding: 0;
+}
+
+.navigation_item {
+  margin-right: 20px;
+}
+
+.navigation_item a {
+  text-decoration: none;
+  color: #f5f5dc;
+  font-size: 1.2em;
+}
+
+.navigation_item a:hover {
+  color: #e1b382;
+  font-size: 1.4rem;
+}
+
+.navigation_toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5em;
+  color: #fff;
+}
+
+.fa-bars,
+.fa-times {
+  display: none;
+  font-size: 1em;
+  color: #f5f5dc;
+}
+
+@media screen and (max-width: 768px) {
+  .navigation_list {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: 400;
+    font-size: 1.2em;
+    gap: 40px;
+    position: absolute;
+    top: 55px;
+    left: 0;
+    width: 100%;
+    height: 83vh;
+    background-color: #92290ce6;
+    border-top: 2px solid #f5f5dc;
+    z-index: 1;
+    padding-top: 100px;
+  }
+
+  .navigation_list.show {
+    display: flex;
+  }
+
+  .navigation_toggle,
+  .fa-bars,
+  .fa-times {
+    display: block;
+    color: #f5f5dc;
+  }
+}
