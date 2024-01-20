@@ -82,8 +82,8 @@ h1:hover div span {
 .homepage {
   text-align: center;
   padding: 20px;
-  background-color: #ebceb4; 
-  height: 90vh; 
+  background-color: #ebceb4;
+  height: 90vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -92,9 +92,8 @@ h1:hover div span {
 
 .homepage h1 {
   font-size: 2em;
-  color: #94290c; 
+  color: #94290c;
 }
-
 
 .homepage p {
   font-size: 1.2em;
@@ -104,22 +103,21 @@ h1:hover div span {
 
 .coffee-img {
   max-width: 100%;
-  max-height: 70%; 
-  margin: 0 auto; 
-  overflow: hidden; 
+  max-height: 70%;
+  margin: 0 auto;
+  overflow: hidden;
 }
 
-.coffee-img img {
-  width: 100%;
+img {
+  width: 95%;
   height: 100%;
-  object-fit: cover; 
+  object-fit: cover;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-   transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
 }
 
 .coffee-img img:hover {
-  transform: scale(1.05); 
+  transform: scale(1.05);
 }
 .social-links {
   margin-top: 20px;
@@ -127,7 +125,7 @@ h1:hover div span {
 
 .social-links h3 {
   font-size: 1.2em;
-  color: #94290c; 
+  color: #94290c;
   margin-bottom: 10px;
 }
 
@@ -135,6 +133,7 @@ h1:hover div span {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 20px;
 }
 
 .social-link-icons a {
@@ -148,6 +147,26 @@ h1:hover div span {
   color: #d15634e6;
 }
 
+.nav-buttons {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 60%;
+  transform: translateY(-50%);
+  align-items: center;
+}
+.nav-buttons button {
+  background: none;
+  border: none;
+  font-size: 2em;
+  color: #2e2e2e;
+  cursor: pointer;
+}
+
+.nav-buttons button:hover {
+  color: #94290c;
+}
 
 @media screen and (max-width: 768px) {
   .navigation_list {
