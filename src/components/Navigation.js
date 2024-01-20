@@ -19,19 +19,29 @@ const Navigation = () => {
         className={isMobile ? 'navigation_list show' : 'navigation_list hide'}
       >
         <li className="navigation_item">
-          <Link to="/home">Home</Link>
+          <Link to="/" onClick={toggleMenu}>
+            Home
+          </Link>
         </li>
         <li className="navigation_item">
-          <Link to="/coffees">Coffees</Link>
+          <Link to="/coffees" onClick={toggleMenu}>
+            Coffees
+          </Link>
         </li>
         <li className="navigation_item">
-          <Link to="/desserts">Desserts</Link>
+          <Link to="/desserts" onClick={toggleMenu}>
+            Desserts
+          </Link>
         </li>
         <li className="navigation_item">
-          <Link to="/offers">Offers</Link>
+          <Link to="/offers" onClick={toggleMenu}>
+            Offers
+          </Link>
         </li>
         <li className="navigation_item">
-          <Link to="/contact">Contact Us</Link>
+          <Link to="/contact" onClick={toggleMenu}>
+            Contact Us
+          </Link>
         </li>
       </ul>
       <button
