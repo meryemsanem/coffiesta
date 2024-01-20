@@ -35,6 +35,13 @@
   font-size: 1.2em;
 }
 
+.social-link-icons a {
+  margin: 0 10px;
+  font-size: 1.5em;
+  color: #94290c;
+  text-decoration: none;
+}
+
 .navigation_item a:hover {
   color: #e1b382;
   font-size: 1.4rem;
@@ -65,18 +72,22 @@ h1 {
 h1 div span {
   transition: 0.5s ease-out;
 }
-h1:hover div span:nth-child(1) {
-  margin-right: 5px;
-}
-h1:hover div span:nth-child(1):after {
-  content: 'FEE';
-}
-h1:hover div span:nth-child(2) {
-  margin-left: 30px;
-}
+
 h1:hover div span {
   color: #fff;
   text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #fff;
+}
+
+h1:hover div span:nth-child(1) {
+  margin-right: 5px;
+}
+
+h1:hover div span:nth-child(1)::after {
+  content: 'FEE';
+}
+
+h1:hover div span:nth-child(2) {
+  margin-left: 30px;
 }
 
 .homepage {
@@ -119,6 +130,7 @@ img {
 .coffee-img img:hover {
   transform: scale(1.05);
 }
+
 .social-links {
   margin-top: 20px;
 }
@@ -136,13 +148,6 @@ img {
   gap: 20px;
 }
 
-.social-link-icons a {
-  margin: 0 10px;
-  font-size: 1.5em;
-  color: #94290c;
-  text-decoration: none;
-}
-
 .social-link-icons a:hover {
   color: #d15634e6;
 }
@@ -156,6 +161,7 @@ img {
   transform: translateY(-50%);
   align-items: center;
 }
+
 .nav-buttons button {
   background: none;
   border: none;
