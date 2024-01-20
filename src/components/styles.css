@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Grape+Nuts&display=swap');
 
+.app {
+  margin: 0;
+  padding: 0;
+  background-color: #ebceb4;
+}
+
 .navigation {
   display: flex;
   justify-content: space-between;
@@ -94,7 +100,7 @@ h1:hover div span:nth-child(2) {
   text-align: center;
   padding: 20px;
   background-color: #ebceb4;
-  height: 89vh;
+  height: 90vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -127,6 +133,16 @@ img {
   transition: transform 0.3s ease-in-out;
 }
 
+.coffees li img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: flex;
+  margin: auto;
+  transition: transform 0.4s ease-in-out;
+  box-shadow: 0 4px 8px #efefef;
+}
+
 .coffee-img img:hover {
   transform: scale(1.05);
 }
@@ -136,9 +152,10 @@ img {
 }
 
 .social-links h3 {
-  font-size: 1.2em;
+  font-size: 1.4em;
   color: #94290c;
   margin-bottom: 10px;
+  font-family: monospace;
 }
 
 .social-link-icons {
@@ -172,6 +189,53 @@ img {
 
 .nav-buttons button:hover {
   color: #94290c;
+}
+
+.loading {
+  text-align: center;
+  color: #94290c;
+  font-size: 24px;
+}
+
+.coffees {
+  height: 100%;
+  background-color: #94290c;
+}
+
+.coffees h2 {
+  text-align: center;
+  color: #e1b382;
+  padding-top: 30px;
+  font-size: 28px;
+}
+
+.coffees ul {
+  list-style-type: none;
+  padding: 20px;
+  margin: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  justify-content: center;
+}
+
+.coffees li {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #ebceb4;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.coffees li img:hover {
+  transform: scale(1.05);
+}
+
+.coffee-title {
+  color: #94290c;
+  text-align: center;
+  padding: 10px;
+  font-size: 22px;
 }
 
 @media screen and (max-width: 768px) {
