@@ -14,6 +14,7 @@ import coffeeImage1 from '../images/coffee1.png';
 import coffeeImage2 from '../images/coffee2.jpeg';
 import coffeeImage3 from '../images/coffee3.avif';
 import coffeeImage4 from '../images/coffee4.jpeg';
+import coffeeImage5 from '../images/coffee5.jpeg';
 import coffeeImage6 from '../images/coffee6.jpeg';
 
 import './styles.css';
@@ -25,6 +26,7 @@ const Homepage = () => {
     coffeeImage2,
     coffeeImage3,
     coffeeImage4,
+    coffeeImage5,
     coffeeImage6,
   ];
   const [currentImage, setCurrentImage] = useState(0);
