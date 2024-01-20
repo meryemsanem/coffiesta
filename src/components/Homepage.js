@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faFacebook,
@@ -38,6 +38,14 @@ const Homepage = () => {
   const showPrevImage = () => {
     setCurrentImage((prevIndex) => (prevIndex === 0 ? coffeeImages.length - 1 : prevIndex - 1));
   };
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      showNextImage();
+    }, 2500);
+
+    return () => clearInterval(interval);
+  }, [currentImage]);
 
   return (
     <div className="homepage" id="homepage">
