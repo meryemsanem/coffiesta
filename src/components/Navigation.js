@@ -48,6 +48,11 @@ const Navigation = () => {
             </Link>
           </li>
           <li className="navigation_item">
+            <Link to="/order" onClick={() => scrollToSection('order')}>
+              Order
+            </Link>
+          </li>
+          <li className="navigation_item">
             <Link to="/contact" onClick={toggleMenu}>
               Contact Us
             </Link>
