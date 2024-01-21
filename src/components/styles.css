@@ -459,6 +459,16 @@ button:hover {
   text-align: center;
 }
 
+.order-message {
+  text-align: center;
+  border-radius: 8px;
+  background-color: #94290c;
+  color: #ebceb4;
+  padding: 20px;
+  font-family: monospace;
+  font-size: 16px;
+}
+
 @media screen and (max-width: 768px) {
   .navigation_list {
     display: none;
