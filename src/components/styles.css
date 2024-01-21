@@ -133,7 +133,8 @@ img {
   transition: transform 0.3s ease-in-out;
 }
 
-.coffees li img, .desserts li img {
+.coffees li img,
+.desserts li img {
   max-width: 100%;
   height: auto;
   border-radius: 8px;
@@ -221,7 +222,8 @@ img {
   font-size: 28px;
 }
 
-.coffees ul, .desserts ul {
+.coffees ul,
+.desserts ul {
   list-style-type: none;
   padding: 20px;
   margin: 10px;
@@ -243,11 +245,12 @@ img {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 8px;
-  background-color:#94290c;
+  background-color: #94290c;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.coffees li img:hover, .desserts li img:hover {
+.coffees li img:hover,
+.desserts li img:hover {
   transform: scale(1.05);
 }
 
