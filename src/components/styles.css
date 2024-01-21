@@ -133,7 +133,8 @@ img {
   transition: transform 0.3s ease-in-out;
 }
 
-.coffees li img {
+.coffees li img,
+.desserts li img {
   max-width: 100%;
   height: auto;
   border-radius: 8px;
@@ -202,6 +203,11 @@ img {
   background-color: #94290c;
 }
 
+.desserts {
+  height: 100%;
+  background-color: #ebceb4;
+}
+
 .coffees h2 {
   text-align: center;
   color: #e1b382;
@@ -209,7 +215,15 @@ img {
   font-size: 28px;
 }
 
-.coffees ul {
+.desserts h2 {
+  text-align: center;
+  color: #94290c;
+  padding-top: 30px;
+  font-size: 28px;
+}
+
+.coffees ul,
+.desserts ul {
   list-style-type: none;
   padding: 20px;
   margin: 10px;
@@ -227,12 +241,28 @@ img {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.coffees li img:hover {
+.desserts li {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #94290c;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.coffees li img:hover,
+.desserts li img:hover {
   transform: scale(1.05);
 }
 
 .coffee-title {
   color: #94290c;
+  text-align: center;
+  padding: 10px;
+  font-size: 22px;
+}
+
+.dessert-title {
+  color: #ebceb4;
   text-align: center;
   padding: 10px;
   font-size: 22px;
