@@ -38,7 +38,7 @@ const Navigation = () => {
             </Link>
           </li>
           <li className="navigation_item">
-            <Link to="/desserts" onClick={toggleMenu}>
+            <Link to="/desserts" onClick={() => scrollToSection('desserts')}>
               Desserts
             </Link>
           </li>
