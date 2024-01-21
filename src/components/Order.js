@@ -9,6 +9,7 @@ const Order = () => {
   const [selectedDessert, setSelectedDessert] = useState('');
   const [coffeeOrder, setCOrder] = useState([]);
   const [dessertOrder, setDOrder] = useState([]);
+  const [orderMessage, setOrderMessage] = useState('');
 
   useEffect(() => {
     const fetchCoffees = async () => {
@@ -127,7 +128,14 @@ const Order = () => {
   };
 
   const handleSubmitOrder = () => {
-    console.log('Order submitted:', { coffeeOrder, dessertOrder });
+    setOrderMessage('We received your order. We will deliver it soon. Enjoy!');
+
+    setCOrder([]);
+    setDOrder([]);
+
+    setTimeout(() => {
+      setOrderMessage('');
+    }, 5000);
   };
 
   return (
@@ -211,7 +219,6 @@ const Order = () => {
                 <div key={order.item.idMeal} className="order-item">
                   <span>{order.item.strMeal}</span>
                   <div className="order-item-quantity">
-
                     <button
                       type="button"
                       onClick={() => handleDecreaseQuantity(order.item, 'dessert')}
@@ -241,8 +248,14 @@ const Order = () => {
         <button type="button" className="submit" onClick={handleSubmitOrder}>
           Submit Order
         </button>
+        {orderMessage && (
+          <div className="order-message">
+            <p>{orderMessage}</p>
+          </div>
+        )}
       </div>
     </div>
   );
 };
+
 export default Order;
