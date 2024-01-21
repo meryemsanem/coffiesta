@@ -44,8 +44,11 @@ const Order = () => {
   };
 
   const handleDessertChange = (event) => {
-    const selectedIndex = event.target.value;
-    setSelectedDessert(selectedIndex === '' ? '' : desserts[selectedIndex]);
+    const selectedId = event.target.value;
+    const selectedDessert = desserts.find(
+      (dessert) => dessert.idMeal === selectedId,
+    );
+    setSelectedDessert(selectedDessert || '');
   };
 
   const handleAddToOrder = () => {
@@ -166,12 +169,15 @@ const Order = () => {
 
         <div className="order-section">
           <h3>Desserts</h3>
-          <select value={selectedDessert} onChange={handleDessertChange}>
+          <select
+            value={selectedDessert.idMeal || ''}
+            onChange={handleDessertChange}
+          >
             <option value="" disabled>
               Select a dessert
             </option>
-            {desserts.map((dessert, index) => (
-              <option key={dessert.idMeal} value={index}>
+            {desserts.map((dessert) => (
+              <option key={dessert.idMeal} value={dessert.idMeal}>
                 {dessert.strMeal}
               </option>
             ))}
@@ -245,7 +251,12 @@ const Order = () => {
             </div>
           )}
         </div>
-        <button type="button" className="submit" onClick={handleSubmitOrder}>
+        <button
+          type="button"
+          className="submit"
+          disabled={coffeeOrder.length === 0 && dessertOrder.length === 0}
+          onClick={handleSubmitOrder}
+        >
           Submit Order
         </button>
         {orderMessage && (
