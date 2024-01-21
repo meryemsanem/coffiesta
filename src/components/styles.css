@@ -354,6 +354,111 @@ img {
   margin-top: 10px;
   font-family: monospace;
 }
+
+.order {
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  width: 100%;
+  background-image: url('../images/coffee-back.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.order-container {
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(254, 254, 254, 0.1);
+}
+
+.order h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #94290c;
+}
+
+.order-section {
+  margin-bottom: 20px;
+}
+
+.order-section h3 {
+  color: #94290c;
+}
+
+select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #94290c;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.submit {
+  display: flex;
+  margin: 20px auto;
+}
+
+button:hover {
+  background-color: #ebceb4;
+  color: #94290c;
+}
+
+.order-summary {
+  margin-top: 20px;
+}
+
+.order-items {
+  display: grid;
+  gap: 10px;
+}
+
+.order-item {
+  display: grid;
+  grid-template-columns: 1fr auto auto auto auto;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  padding: 10px 0;
+}
+
+.order-item-quantity {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.order-item button {
+  margin-left: 10px;
+  background-color: #94290c;
+}
+
+.order-item button:hover {
+  background-color: #ebceb4;
+}
+
+.order-summary h3,
+.order-summary p {
+  color: #94290c;
+  text-align: center;
+}
+
 @media screen and (max-width: 768px) {
   .navigation_list {
     display: none;
