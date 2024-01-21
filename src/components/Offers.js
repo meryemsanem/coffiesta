@@ -23,11 +23,29 @@ const Offers = () => {
     {
       id: 3,
       title: 'Dessert of the Day',
-      description: ' Buy any coffee and get 50% off on our dessert of the day.',
+      description: 'Buy any coffee and get 50% off on our dessert of the day.',
       discount: '50% off',
       image: offer3,
     },
   ];
+
+  const Quotes = [
+    'Life begins after coffee.',
+    'Espresso yourself!',
+    'Coffee first, adulting second.',
+    'But first, coffee.',
+    'Stressed spelled backward is desserts.',
+    'Dessert is like a feel-good song and the best ones make you dance.',
+    'Life is short, eat dessert first.',
+    'Dessert: because every meal should end with something sweet.',
+  ];
+
+  const getRandomQuote = (quotes) => {
+    const randomIndex = Math.floor(Math.random() * quotes.length);
+    return quotes[randomIndex];
+  };
+
+  const randomQuote = getRandomQuote(Quotes);
 
   return (
     <div className="offers" id="offers">
@@ -41,6 +59,11 @@ const Offers = () => {
             <img src={offer.image} alt={offer.title} />
           </div>
         ))}
+      </div>
+
+      <div className="quote-section">
+        <h3>Quote of the Day</h3>
+        <p>{randomQuote}</p>
       </div>
     </div>
   );
