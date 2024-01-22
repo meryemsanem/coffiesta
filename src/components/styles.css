@@ -133,6 +133,15 @@ img {
   transition: transform 0.3s ease-in-out;
 }
 
+.offer-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-top: 10px;
+  transition: transform 0.4s ease-in-out;
+  box-shadow: 0 4px 8px #fb5f34;
+}
+
 .coffees li img,
 .desserts li img {
   max-width: 100%;
@@ -169,6 +178,26 @@ img {
 
 .social-link-icons a:hover {
   color: #d15634e6;
+}
+
+button {
+  background-color: #94290c;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #ebceb4;
+  color: #94290c;
+}
+
+.order-item button {
+  margin-left: 10px;
+  background-color: #94290c;
 }
 
 .nav-buttons {
@@ -322,17 +351,7 @@ img {
   font-family: 'Courier New', Courier, monospace;
 }
 
-.offer-card img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-  margin-top: 10px;
-  transition: transform 0.4s ease-in-out;
-  box-shadow: 0 4px 8px #fb5f34;
-}
-
 .quote-section {
-  margin-top: 20px;
   padding: 20px;
   border: 1px solid #fbe6e6;
   border-radius: 8px;
@@ -374,7 +393,7 @@ img {
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 8px;
-  background-color: #ffffff;
+  background-color: #fff;
   box-shadow: 0 4px 8px rgba(254, 254, 254, 0.1);
 }
 
@@ -400,24 +419,9 @@ select {
   border-radius: 5px;
 }
 
-button {
-  background-color: #94290c;
-  color: white;
-  padding: 10px 15px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-}
-
 .submit {
   display: flex;
   margin: 20px auto;
-}
-
-button:hover {
-  background-color: #ebceb4;
-  color: #94290c;
 }
 
 .order-summary {
@@ -442,11 +446,6 @@ button:hover {
   gap: 10px;
   align-items: center;
   justify-content: center;
-}
-
-.order-item button {
-  margin-left: 10px;
-  background-color: #94290c;
 }
 
 .order-item button:hover {
