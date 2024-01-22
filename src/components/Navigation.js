@@ -1,16 +1,34 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '@fortawesome/fontawesome-free/css/all.css';
 import './styles.css';
 
 const Navigation = () => {
   const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleBodyScroll = () => {
+      document.body.style.overflow = isMobile ? 'hidden' : 'auto';
+    };
+
+    handleBodyScroll(); 
+
+
+    window.addEventListener('scroll', handleBodyScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleBodyScroll);
+    };
+  }, [isMobile]);
+
   const closeMenu = () => setIsMobile(false);
+
   const toggleMenu = (event) => {
     if (event.type === 'click' || event.key === 'Enter' || event.key === ' ') {
       setIsMobile(!isMobile);
     }
   };
+
   const scrollToSection = (sectionId) => {
     const section = document.getElementById(sectionId);
     if (section) {
@@ -18,6 +36,7 @@ const Navigation = () => {
       closeMenu();
     }
   };
+
   return (
     <div className="wrapper">
       <nav className="navigation">
@@ -53,7 +72,7 @@ const Navigation = () => {
             </Link>
           </li>
           <li className="navigation_item">
-            <Link to="/contact" onClick={toggleMenu}>
+            <Link to="/contact" onClick={() => scrollToSection('contact')}>
               Contact Us
             </Link>
           </li>
