@@ -4,6 +4,8 @@ import Navigation from './components/Navigation';
 import Homepage from './components/Homepage';
 import Coffees from './components/Coffees';
 import Desserts from './components/Desserts';
+import Offers from './components/Offers';
+import Order from './components/Order';
 
 function App() {
   return (
@@ -13,6 +15,8 @@ function App() {
         <Homepage />
         <Coffees />
         <Desserts />
+        <Offers />
+        <Order />
       </div>
     </Router>
   );

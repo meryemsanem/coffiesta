@@ -133,6 +133,15 @@ img {
   transition: transform 0.3s ease-in-out;
 }
 
+.offer-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-top: 10px;
+  transition: transform 0.4s ease-in-out;
+  box-shadow: 0 4px 8px #fb5f34;
+}
+
 .coffees li img,
 .desserts li img {
   max-width: 100%;
@@ -144,7 +153,8 @@ img {
   box-shadow: 0 4px 8px #efefef;
 }
 
-.coffee-img img:hover {
+.coffee-img img:hover,
+.offers img:hover {
   transform: scale(1.05);
 }
 
@@ -168,6 +178,26 @@ img {
 
 .social-link-icons a:hover {
   color: #d15634e6;
+}
+
+button {
+  background-color: #94290c;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #ebceb4;
+  color: #94290c;
+}
+
+.order-item button {
+  margin-left: 10px;
+  background-color: #94290c;
 }
 
 .nav-buttons {
@@ -213,6 +243,7 @@ img {
   color: #e1b382;
   padding-top: 30px;
   font-size: 28px;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 .desserts h2 {
@@ -220,6 +251,7 @@ img {
   color: #94290c;
   padding-top: 30px;
   font-size: 28px;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 .coffees ul,
@@ -262,10 +294,201 @@ img {
 }
 
 .dessert-title {
-  color: #ebceb4;
+  color: #e1b382;
   text-align: center;
   padding: 10px;
   font-size: 22px;
+}
+
+.offers {
+  padding: 40px 20px;
+  text-align: center;
+  background-color: #94290c;
+}
+
+.offers h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #e1b382;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.offers-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.offer-card {
+  max-width: 300px;
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ba60005b;
+  border-radius: 8px;
+  transition: transform 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.offer-card:hover {
+  transform: scale(1.05);
+}
+
+.offer-card h3 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  color: #e1b382;
+}
+
+.offer-card p {
+  margin-bottom: 15px;
+  color: #e1b382;
+}
+
+.discount {
+  font-weight: bold;
+  font-size: 1.3em;
+  text-transform: uppercase;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.quote-section {
+  padding: 20px;
+  border: 1px solid #fbe6e6;
+  border-radius: 8px;
+  background-color: #e1b382;
+  text-align: center;
+  margin: auto;
+  width: 60%;
+}
+
+.quote-section h3 {
+  color: #a52a2a;
+  font-size: 1.5em;
+  font-family: monospace;
+}
+
+.quote-section p {
+  color: #a52a2a;
+  font-size: 1.2em;
+  margin-top: 10px;
+  font-family: monospace;
+}
+
+.order {
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  width: 100%;
+  background-image: url('../images/coffee-back.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.order-container {
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(254, 254, 254, 0.1);
+}
+
+.order h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #94290c;
+}
+
+.order-section {
+  margin-bottom: 20px;
+}
+
+.order-section h3 {
+  color: #94290c;
+}
+
+select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.submit {
+  display: flex;
+  margin: 20px auto;
+}
+
+.order-summary {
+  margin-top: 20px;
+}
+
+.order-items {
+  display: grid;
+  gap: 10px;
+}
+
+.order-item {
+  display: grid;
+  grid-template-columns: 1fr auto auto auto auto;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  padding: 10px 0;
+}
+
+.order-item-quantity {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.order-item button:hover {
+  background-color: #ebceb4;
+}
+
+.order-summary h3,
+.order-summary p {
+  color: #94290c;
+  text-align: center;
+}
+
+.order-message {
+  text-align: center;
+  border-radius: 8px;
+  background-color: #94290c;
+  color: #ebceb4;
+  padding: 20px;
+  font-family: monospace;
+  font-size: 16px;
+}
+
+.info-container {
+  margin-top: 20px;
+}
+
+.info-container label {
+  margin-bottom: 5px;
+  font-size: 16px;
+  color: #94290c;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.info-container input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  font-size: 14px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
 }
 
 @media screen and (max-width: 768px) {

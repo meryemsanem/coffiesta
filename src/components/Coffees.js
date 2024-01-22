@@ -29,7 +29,7 @@ const Coffees = () => {
     <div id="coffees" className="coffees">
       <h2>Coffees</h2>
       <ul>
-        {coffees.map((coffee) => (
+        {coffees.slice(0, 15).map((coffee) => (
           <li key={coffee.id}>
             <h3 className="coffee-title">{coffee.title}</h3>
             {' '}
