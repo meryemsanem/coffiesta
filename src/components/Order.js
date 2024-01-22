@@ -10,9 +10,9 @@ const Order = () => {
   const [coffeeOrder, setCOrder] = useState([]);
   const [dessertOrder, setDOrder] = useState([]);
   const [orderMessage, setOrderMessage] = useState('');
-  const [name, setName] = useState([]);
-  const [phone, setPhone] = useState([]);
-  const [address, setAddress] = useState([]);
+  const [name, setName] = useState('');
+  const [phone, setPhone] = useState('');
+  const [address, setAddress] = useState('');
 
   useEffect(() => {
     const fetchCoffees = async () => {
@@ -51,12 +51,12 @@ const Order = () => {
     const selectedDessert = desserts.find(
       (dessert) => dessert.idMeal === selectedId,
     );
-    setSelectedDessert(selectedDessert || '');
+    setSelectedDessert(selectedDessert || null);
   };
 
   const handleAddToOrder = () => {
-    if (selectedCoffee) {
-      console.log('Selected Coffee IdD:', selectedCoffee.id);
+    if (selectedCoffee && selectedCoffee.id) {
+      console.log('Selected Coffee Id:', selectedCoffee.id);
       const existingCoffee = coffeeOrder.find(
         (order) => order.item.id === selectedCoffee.id,
       );
@@ -74,8 +74,9 @@ const Order = () => {
 
       setSelectedCoffee('');
     }
-    if (selectedDessert) {
-      console.log('Selected Desserts IdD:', selectedDessert.idMeal);
+
+    if (selectedDessert && selectedDessert.idMeal) {
+      console.log('Selected Dessert Id:', selectedDessert.idMeal);
       const existingDessert = dessertOrder.find(
         (order) => order.item.idMeal === selectedDessert.idMeal,
       );
@@ -134,11 +135,18 @@ const Order = () => {
   };
 
   const handleSubmitOrder = () => {
-    if (!name || !phone || !address) {
+    // Check if coffee or dessert is selected
+    if (coffeeOrder.length === 0 && dessertOrder.length === 0) {
       setOrderMessage(
-        'Please fill in all the information before submitting the order.',
+        'Please add at least one item (coffee or dessert) to your order.',
+      );
+    } else if (!name || !phone || !address) {
+      // Check if information is empty
+      setOrderMessage(
+        'Please fill in all the personal information before submitting the order.',
       );
     } else {
+      // All checks passed, proceed with submitting the order
       setOrderMessage(
         'We received your order. We will deliver it soon. Enjoy!',
       );
@@ -147,12 +155,15 @@ const Order = () => {
       setName('');
       setAddress('');
       setPhone('');
+      setSelectedCoffee('');
+      setSelectedDessert('');
 
       setTimeout(() => {
         setOrderMessage('');
       }, 5000);
     }
   };
+
   return (
     <div className="order" id="order">
       <div className="order-container">
@@ -304,9 +315,13 @@ const Order = () => {
           type="button"
           className="submit"
           disabled={
-            coffeeOrder.length === 0
-            && dessertOrder.length === 0
-            && (!name || !phone || !address)
+            !coffeeOrder.length
+            && !dessertOrder.length
+            && !name
+            && !phone
+            && !address
+            && !selectedCoffee?.id
+            && !selectedDessert?.idMeal
           }
           onClick={handleSubmitOrder}
         >
