@@ -10,6 +10,9 @@ const Order = () => {
   const [coffeeOrder, setCOrder] = useState([]);
   const [dessertOrder, setDOrder] = useState([]);
   const [orderMessage, setOrderMessage] = useState('');
+  const [name, setName] = useState([]);
+  const [phone, setPhone] = useState([]);
+  const [address, setAddress] = useState([]);
 
   useEffect(() => {
     const fetchCoffees = async () => {
@@ -131,16 +134,25 @@ const Order = () => {
   };
 
   const handleSubmitOrder = () => {
-    setOrderMessage('We received your order. We will deliver it soon. Enjoy!');
+    if (!name || !phone || !address) {
+      setOrderMessage(
+        'Please fill in all the information before submitting the order.',
+      );
+    } else {
+      setOrderMessage(
+        'We received your order. We will deliver it soon. Enjoy!',
+      );
+      setCOrder([]);
+      setDOrder([]);
+      setName('');
+      setAddress('');
+      setPhone('');
 
-    setCOrder([]);
-    setDOrder([]);
-
-    setTimeout(() => {
-      setOrderMessage('');
-    }, 5000);
+      setTimeout(() => {
+        setOrderMessage('');
+      }, 5000);
+    }
   };
-
   return (
     <div className="order" id="order">
       <div className="order-container">
@@ -182,10 +194,47 @@ const Order = () => {
               </option>
             ))}
           </select>
+          <button type="button" onClick={handleAddToOrder}>
+            Add to Order
+          </button>
+          <div className="info-container">
+            <h3>Your Information</h3>
+            <label htmlFor="name">
+              Name:
+              <input
+                type="text"
+                id="name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                placeholder="name"
+                required
+              />
+            </label>
+            <label htmlFor="phone">
+              Phone:
+              <input
+                type="tel"
+                id="phone"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+                placeholder="phone number
+              "
+                required
+              />
+            </label>
+            <label htmlFor="address">
+              Address:
+              <input
+                type="text"
+                id="address"
+                value={address}
+                onChange={(e) => setAddress(e.target.value)}
+                placeholder="address"
+                required
+              />
+            </label>
+          </div>
         </div>
-        <button type="button" onClick={handleAddToOrder}>
-          Add to Order
-        </button>
 
         <div className="order-summary">
           <h3>Order Summary</h3>
@@ -254,7 +303,11 @@ const Order = () => {
         <button
           type="button"
           className="submit"
-          disabled={coffeeOrder.length === 0 && dessertOrder.length === 0}
+          disabled={
+            coffeeOrder.length === 0
+            && dessertOrder.length === 0
+            && (!name || !phone || !address)
+          }
           onClick={handleSubmitOrder}
         >
           Submit Order
