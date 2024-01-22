@@ -6,17 +6,21 @@ import Coffees from './components/Coffees';
 import Desserts from './components/Desserts';
 import Offers from './components/Offers';
 import Order from './components/Order';
+import Contact from './components/Contact';
+import Up from './components/Up';
 
 function App() {
   return (
     <Router>
       <div className="app">
+        <Up />
         <Navigation />
         <Homepage />
         <Coffees />
         <Desserts />
         <Offers />
         <Order />
+        <Contact />
       </div>
     </Router>
   );
