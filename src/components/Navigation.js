@@ -11,8 +11,7 @@ const Navigation = () => {
       document.body.style.overflow = isMobile ? 'hidden' : 'auto';
     };
 
-    handleBodyScroll(); 
-
+    handleBodyScroll();
 
     window.addEventListener('scroll', handleBodyScroll);
 
