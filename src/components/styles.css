@@ -383,7 +383,7 @@ button:hover {
 }
 
 .order {
-  height: 100vh;
+  /* height: 100vh; */
   align-items: center;
   justify-content: center;
   display: flex;
@@ -500,9 +500,9 @@ select {
   border: 1px solid #ccc;
 }
 
-.contact {
+/* .contact {
   height: 100vh;
-}
+} */
 
 .contact-container {
   max-width: 800px;
