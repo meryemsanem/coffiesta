@@ -5,10 +5,6 @@ import {
   faTwitter,
   faInstagram,
 } from '@fortawesome/free-brands-svg-icons';
-import {
-  faChevronLeft,
-  faChevronRight,
-} from '@fortawesome/free-solid-svg-icons';
 import coffeeShop from '../images/coffee-bar.jpg';
 import coffeeImage1 from '../images/coffee1.png';
 import coffeeImage2 from '../images/coffee2.jpeg';
@@ -35,8 +31,8 @@ const Homepage = () => {
     setCurrentImage((prevIndex) => (prevIndex === coffeeImages.length - 1 ? 0 : prevIndex + 1));
   };
 
-  const showPrevImage = () => {
-    setCurrentImage((prevIndex) => (prevIndex === 0 ? coffeeImages.length - 1 : prevIndex - 1));
+  const handleDotClick = (index) => {
+    setCurrentImage(index);
   };
 
   useEffect(() => {
@@ -65,17 +61,16 @@ const Homepage = () => {
         <img src={coffeeImages[currentImage]} alt="Coffee" />
       </div>
 
-      <div className="nav-buttons">
-        <button
-          type="button"
-          onClick={showPrevImage}
-          aria-label="Previous Image"
-        >
-          <FontAwesomeIcon icon={faChevronLeft} />
-        </button>
-        <button type="button" onClick={showNextImage} aria-label="Next Image">
-          <FontAwesomeIcon icon={faChevronRight} />
-        </button>
+      <div className="dots-container">
+        {coffeeImages.map((image, index) => (
+          <button
+            key={image.id}
+            className={`dot ${currentImage === index ? 'active' : ''}`}
+            onClick={() => handleDotClick(index)}
+            type="button"
+            aria-label={`Go to image ${index + 1}`}
+          />
+        ))}
       </div>
 
       <div className="social-links">
